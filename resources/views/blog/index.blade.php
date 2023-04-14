@@ -10,7 +10,7 @@
             <img class="object-cover w-full lg:mx-6 lg:w-1/2 rounded-xl h-72 lg:h-96" src="{{ $article->image }}"alt="">
 
             <div class="mt-6 lg:w-1/2 lg:mt-0 lg:mx-6 ">
-                <p class="text-sm text-blue-500 uppercase">{{ $article->categories->nom }}</p>
+                <a href="#" class="text-sm text-blue-500 uppercase hover:underline">{{ $article->categories->nom }}</a>
 
                 <a href="#" class="block mt-4 text-2xl font-semibold text-gray-800 hover:underline dark:text-white md:text-3xl">
                     {{ $article->titre }}

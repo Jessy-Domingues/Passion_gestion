@@ -42,7 +42,7 @@
                 <div class="hidden justify-between items-center w-full lg:flex lg:w-auto lg:order-1" id="mobile-menu-2">
                     <ul class="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
                         <li class="font-medium text-sm p-3 hover:bg-slate-300 dark:hover:bg-slate-800 sm:p-0 sm:hover:bg-transparent text-primary">
-                            <a href="#" class="dark:text-white">Accueil</a>
+                            <a href="{{ route('home')}}" class="dark:text-white">Accueil</a>
                         </li>
                         <li class="font-medium text-sm p-3 cursor-pointer hover:bg-slate-300 dark:hover:bg-slate-800 sm:p-0 sm:hover:bg-transparent text-gray-600 hover:text-primary transition-colors">
                             <a href="{{ route('blog.index')}}" class="dark:text-white">Blog</a>
