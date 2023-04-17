@@ -22,7 +22,10 @@ class StoreArticlesRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'titre' => 'required',
+            'contenu' => 'required',
+            'image' => 'image|required',
+            'categorie' => 'required'
         ];
     }
 }
