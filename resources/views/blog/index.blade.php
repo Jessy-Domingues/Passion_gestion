@@ -12,7 +12,7 @@
             <div class="mt-6 lg:w-1/2 lg:mt-0 lg:mx-6 ">
                 <a href="#" class="text-sm text-blue-500 uppercase hover:underline">{{ $article->categories->nom }}</a>
 
-                <a href="#" class="block mt-4 text-2xl font-semibold text-gray-800 hover:underline dark:text-white md:text-3xl">
+                <a href="{{ route('articles.show', $article) }}" class="block mt-4 text-2xl font-semibold text-gray-800 hover:underline dark:text-white md:text-3xl">
                     {{ $article->titre }}
                 </a>
 
@@ -20,7 +20,7 @@
                     {{ Str::limit($article->contenu, 120) }}
                 </p>
 
-                <a href="#" class="inline-block mt-2 text-blue-500 underline hover:text-blue-400">Read more</a>
+                <a href="{{ route('articles.show', $article) }}" class="inline-block mt-2 text-blue-500 underline hover:text-blue-400">Voir plus</a>
 
                 <div class="flex items-center mt-6">
 
