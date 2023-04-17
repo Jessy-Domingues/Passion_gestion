@@ -22,10 +22,11 @@
             <!-- Page Heading -->
             
             <header>
-            @include('layouts.navigation')
-                @guest
+            
+                
         <nav class="bg-white border-gray-200 px-4 lg:px-6 py-2.5 dark:bg-gray-800 flex flex-wrap justify-between items-center w-full">
-
+        @include('layouts.navigation')
+             @guest
                 <div class="w-1/12">
                 </div>
                 <div class="flex items-center lg:order-2">
@@ -54,9 +55,9 @@
                         </li>
                     </ul>
                 </div>
-            
+                @endguest
         </nav>
-        @endguest   
+           
     </header>
     
 

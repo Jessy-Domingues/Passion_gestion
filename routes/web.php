@@ -20,6 +20,7 @@ Route::get('/', [WelcomeController::class, 'home'])->name('home');
 
 Route::get('/blog', [ArticlesController::class, 'index'])->name('blog.index');
 
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
