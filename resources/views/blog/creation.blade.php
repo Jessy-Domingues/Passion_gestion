@@ -1,5 +1,4 @@
 <x-app-layout>
-    
 
     <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
 
@@ -10,7 +9,7 @@
     </div>
 
    
-    <form action="{{ route('articles.store') }}" method="post" enctype="multipart/form-data" class="mt-10">
+    <form action="{{ route('articles.store') }}" method="POST" enctype="multipart/form-data" class="mt-10">
     
     @csrf
     <x-input-label for="titre" value="Titre de l'article" />

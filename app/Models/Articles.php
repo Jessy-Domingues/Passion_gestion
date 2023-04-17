@@ -18,7 +18,10 @@ class Articles extends Model
             $article->user()->associate(auth()->user()->id);
             $article->categories()->associate(request()->categorie);
         });
+
+        return redirect()->route('dashboard')->with('success', 'Votre article a été créer');
     }
+    
 
     public function user(){
         return $this->belongsTo(User::class);
