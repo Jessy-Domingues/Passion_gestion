@@ -14,7 +14,7 @@ class ArticlesController extends Controller
      */
     public function index()
     {
-        $articles = Articles::with('categories','user')->get();
+        $articles = Articles::with('categories','user')->latest()->get();
         return view('blog.index', compact('articles'));
     }
 
@@ -38,6 +38,8 @@ class ArticlesController extends Controller
             'contenu' => $request->contenu,
             'image' => $imageName
         ]);
+
+        return redirect()->route('dashboard')->with('success', 'Votre article a été créer');
     }
 
     /**
@@ -45,7 +47,7 @@ class ArticlesController extends Controller
      */
     public function show(Articles $articles)
     {
-        //
+        return view('articles.show', compact($articles));
     }
 
     /**

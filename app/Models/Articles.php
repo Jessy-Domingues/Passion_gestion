@@ -11,6 +11,8 @@ class Articles extends Model
 {
     use HasFactory;
 
+    protected $guarded = [];
+
     public static function boot(){
         parent::boot();
 
@@ -19,7 +21,6 @@ class Articles extends Model
             $article->categories()->associate(request()->categorie);
         });
 
-        return redirect()->route('dashboard')->with('success', 'Votre article a été créer');
     }
     
 

@@ -7,7 +7,7 @@
         @foreach ($articles as $article)
             
         <div class="mt-8 lg:-mx-6 lg:flex lg:items-center">
-            <img class="object-cover w-full lg:mx-6 lg:w-1/2 rounded-xl h-72 lg:h-96" src="{{ $article->image }}"alt="">
+            <img class="object-cover w-full lg:mx-6 lg:w-1/2 rounded-xl h-72 lg:h-96" src="{{ asset('/storage/' . $article->image) }}"alt="">
 
             <div class="mt-6 lg:w-1/2 lg:mt-0 lg:mx-6 ">
                 <a href="#" class="text-sm text-blue-500 uppercase hover:underline">{{ $article->categories->nom }}</a>
