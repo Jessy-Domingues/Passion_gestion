@@ -22,6 +22,7 @@
             <!-- Page Heading -->
             
             <header>
+                @guest
         <nav class="bg-white border-gray-200 px-4 lg:px-6 py-2.5 dark:bg-gray-800 flex flex-wrap justify-between items-center w-full">
 
                 <div class="w-1/12">
@@ -48,14 +49,14 @@
                             <a href="{{ route('blog.index')}}" class="dark:text-white">Blog</a>
                         </li>
                         <li class="font-medium text-sm p-3 cursor-pointer hover:bg-slate-300 dark:hover:bg-slate-800 sm:p-0 sm:hover:bg-transparent text-gray-600 hover:text-primary transition-colors">
-                            <a href="#" class="dark:text-white">Kids</a>
+                            <a href="#" class="dark:text-white">Contact</a>
                         </li>
                     </ul>
                 </div>
             
         </nav>
     </header>
-            
+    @endguest       
 
             <!-- Page Content -->
             <main>
@@ -64,3 +65,4 @@
         </div>
     </body>
 </html>
+

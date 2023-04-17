@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Articles;
+use App\Models\Categories;
 use App\Http\Requests\StoreArticlesRequest;
 use App\Http\Requests\UpdateArticlesRequest;
 
@@ -22,7 +23,8 @@ class ArticlesController extends Controller
      */
     public function create()
     {
-        //
+        $categories = Categories::all();
+        return view('blog.creation', compact('categories'));
     }
 
     /**
