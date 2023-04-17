@@ -20,7 +20,7 @@
 
                 <!-- Volet création d'articles -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('blog.creation')" :active="request()->routeIs('blog.creation')" >
+                    <x-nav-link :href="route('articles.create')" :active="request()->routeIs('articles.create')" >
                         {{ __('Créer un article') }}
                     </x-nav-link>
                 </div>

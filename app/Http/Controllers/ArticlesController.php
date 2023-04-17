@@ -32,7 +32,12 @@ class ArticlesController extends Controller
      */
     public function store(StoreArticlesRequest $request)
     {
-        //
+        $imageName = $request->image->store('articles');
+        $artcicle = Articles::create([
+            'titre' => $request->titre,
+            'contenu' => $request->contenu,
+            'image' => $imageName
+        ]);
     }
 
     /**

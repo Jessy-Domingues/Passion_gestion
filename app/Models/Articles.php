@@ -11,6 +11,15 @@ class Articles extends Model
 {
     use HasFactory;
 
+    public static function boot(){
+        parent::boot();
+
+        self::creating(function($article){
+            $article->user()->associate(auth()->user()->id);
+            $article->categories()->associate(request()->categorie);
+        });
+    }
+
     public function user(){
         return $this->belongsTo(User::class);
     }

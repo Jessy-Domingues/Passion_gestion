@@ -10,8 +10,8 @@
     </div>
 
    
-    <form action="{{ route('blog.stock' )}}" method="post" enctype="multipart/form-data" class="mt-10">
-
+    <form action="{{ route('articles.store') }}" method="post" enctype="multipart/form-data" class="mt-10">
+    
     @csrf
     <x-input-label for="titre" value="Titre de l'article" />
     <x-text-input id="titre" name="titre"/>
