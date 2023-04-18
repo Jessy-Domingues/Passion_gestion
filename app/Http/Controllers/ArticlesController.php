@@ -62,7 +62,7 @@ class ArticlesController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateArticlesRequest $request, Articles $articles)
+    public function update(StoreArticlesRequest $request, Articles $article)
     {
         //
     }
