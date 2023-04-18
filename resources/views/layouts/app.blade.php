@@ -23,10 +23,10 @@
             
             <header>
             
-                
-        <nav class="bg-white border-gray-200 px-4 lg:px-6 py-2.5 flex flex-wrap justify-between items-center w-full">
-        @include('layouts.navigation')
+            @include('layouts.navigation')
              @guest
+        <nav class="bg-blue-950 border-gray-200 px-4 lg:px-6 py-2.5 flex flex-wrap justify-between items-center w-full">
+        
                 <div class="w-1/12">
                 </div>
                 <div class="flex items-center lg:order-2">
@@ -55,9 +55,9 @@
                         </li>
                     </ul>
                 </div>
-                @endguest
+                
         </nav>
-           
+        @endguest
     </header>
     
 
