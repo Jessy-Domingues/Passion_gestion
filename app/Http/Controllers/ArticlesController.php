@@ -53,9 +53,9 @@ class ArticlesController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Articles $articles)
+    public function edit(Articles $article)
     {
-        //
+        return view('blog.edit', compact('article'));
     }
 
     /**
