@@ -45,11 +45,11 @@ class StoreArticlesRequest extends FormRequest
     /**
      * Ici cette méthode va vérifier si dans la requette le champ image est nul, si c'est le cas on va demander à la requete de supprimer l'image.
      */
-    
+
     protected function prepareForValidation()
     {
         if($this->image == null) {
-            $this->image->remove('image');
+            $this->request->remove('image');
         }
     }
 }

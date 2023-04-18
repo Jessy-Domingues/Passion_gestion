@@ -2,7 +2,9 @@
 
 namespace App\Providers;
 
-// use Illuminate\Support\Facades\Gate;
+use App\Models\User;
+use App\Models\Articles;
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 
 class AuthServiceProvider extends ServiceProvider
@@ -23,6 +25,12 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
-        //
+        Gate::define('update-articles', function (User $user, Articles $article) {
+            return $user->id === $article->user_id;
+        });
+
+        Gate::define('destroy-articles', function (User $user, Articles $article) {
+            return $user->id === $article->user_id;
+        });
     }
 }

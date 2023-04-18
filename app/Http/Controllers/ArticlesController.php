@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Articles;
 use App\Models\Categories;
+use Illuminate\Support\Facades\Gate;
 use App\Http\Requests\StoreArticlesRequest;
 use App\Http\Requests\UpdateArticlesRequest;
 
@@ -55,6 +56,10 @@ class ArticlesController extends Controller
      */
     public function edit(Articles $article)
     {
+        if (Gate::denies('update-articles', $article)) {
+            abort(403);
+        }
+        
         $categories = Categories::all();
         return view('blog.edit', compact('article', 'categories'));
     }
@@ -86,8 +91,15 @@ class ArticlesController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Articles $articles)
+    public function destroy(Articles $article)
     {
-        //
+        if (Gate::denies('destroy-articles', $article)) {
+            abort(403);
+        }
+
+        $article->delete();
+
+        return redirect()->route('dashboard')->with('success', 'Votre article a été supprimé');
+
     }
 }

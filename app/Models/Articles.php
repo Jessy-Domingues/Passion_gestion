@@ -21,6 +21,10 @@ class Articles extends Model
             $article->categories()->associate(request()->categorie);
         });
 
+        self::updating(function ($article) {
+            $article->categories()->associate(request()->categorie);
+        });
+
     }
     
 
