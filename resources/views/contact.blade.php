@@ -30,9 +30,16 @@
                 </div>
                 <div class="w-full lg:w-1/2 xl:w-5/12 px-4">
                     <div class="bg-white relative rounded-lg p-8 sm:p-12 shadow-lg">
-                        <form>
+                                @if(Session::has('success'))
+                            <div class="alert alert-success">
+                                {{Session::get('success')}}
+                            </div>
+                                @endif
+                        <form method="post" action="">
+                            @csrf
                             <div class="mb-6">
-                                <input type="text" placeholder="Your Name" class="
+                                <x-input-label>Votre nom</x-input-label>
+                                <input type="text" placeholder="Nom" class="
                         w-full
                         rounded
                         py-3
@@ -42,10 +49,11 @@
                         outline-none
                         focus-visible:shadow-none
                         focus:border-primary
-                        " />
+                        " name="nom"/>
                             </div>
                             <div class="mb-6">
-                                <input type="email" placeholder="Your Email" class="
+                                <x-input-label>Votre Email</x-input-label>
+                                <input type="email" placeholder="Email" class="
                         w-full
                         rounded
                         py-3
@@ -55,10 +63,11 @@
                         outline-none
                         focus-visible:shadow-none
                         focus:border-primary
-                        " />
+                        " name="email"/>
                             </div>
                             <div class="mb-6">
-                                <input type="text" placeholder="Your Phone" class="
+                                <x-input-label>Votre Objet</x-input-label>
+                                <input type="text" placeholder="Objet" class="
                         w-full
                         rounded
                         py-3
@@ -68,10 +77,11 @@
                         outline-none
                         focus-visible:shadow-none
                         focus:border-primary
-                        " />
+                        " name="objet"/>
                             </div>
                             <div class="mb-6">
-                                <textarea rows="6" placeholder="Your Message" class="
+                                <x-input-label>Votre Message</x-input-label>
+                                <textarea rows="6" placeholder="Message" class="
                         w-full
                         rounded
                         py-3
@@ -82,7 +92,7 @@
                         outline-none
                         focus-visible:shadow-none
                         focus:border-primary
-                        "></textarea>
+                        " name="message"></textarea>
                             </div>
                             <div>
                                 <button type="submit" class="
