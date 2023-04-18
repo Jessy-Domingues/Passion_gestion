@@ -28,7 +28,7 @@ class ArticlesController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Cette méthode consiste à stocker l'article dans la table "articles" de la base de données.
      */
     public function store(StoreArticlesRequest $request)
     {
@@ -43,7 +43,7 @@ class ArticlesController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Cette méthode correspond à la page single.
      */
     public function show(Articles $article)
     {
@@ -51,7 +51,7 @@ class ArticlesController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * Cette méthode est utilisée pour rediriger vers la vue de l'édition.
      */
     public function edit(Articles $article)
     {
@@ -60,11 +60,27 @@ class ArticlesController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Cette méthode est utilisée pour modifier un article, ici on émet une condition pour l'image à savoir, si dans la requette l'image n'est pas nulle,
+     * alors l'image contenu dans la requette sera stockée, sinon l'article se mettra à jour sans l'image.
      */
+
     public function update(StoreArticlesRequest $request, Articles $article)
     {
-        //
+        $arrayUpdate = [
+            'titre' => $request->titre,
+            'contenu' => $request->contenu
+        ];
+
+        if ($request->image != null) {
+            $imageName = $request->image->store('articles');
+
+            $arrayUpdate = array_merge($arrayUpdate, [
+                'image' => $imageName
+            ]);
+        }
+        $article->update($arrayUpdate);
+
+        return redirect()->route('dashboard')->with('success', 'Votre article a été modifié');
     }
 
     /**
