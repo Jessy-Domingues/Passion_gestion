@@ -16,7 +16,14 @@
                     <div class="flex items center">
 
                     <a href="{{ route('articles.edit', $article) }}" class="rounded-md bg-yellow-500 px-5 py-3 my-1 hover:bg-yellow-400">Editer article "{{ $article->titre }}"</a>
-                    <a href="#" class="rounded-md bg-red-600 px-5 py-3 my-1 hover:bg-red-500">Supprimer article "{{ $article->titre }}"</a>
+                    <a href="#" class="rounded-md bg-red-600 px-5 py-3 my-1 hover:bg-red-500" 
+                    onclick="event.preventDefault;
+                              document.getElementById('destroy-article-form').submit();">Supprimer article "{{ $article->titre }}"
+                        <form action="{{ route('articles.destroy', $article) }}" method="post" id="destroy-article-form">
+                        @csrf
+                        @method('delete')
+                        </form>
+                    </a>
 
                     </div>
                     <hr>

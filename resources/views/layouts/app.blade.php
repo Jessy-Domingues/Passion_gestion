@@ -10,6 +10,7 @@
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdn.tailgrids.com/tailgrids-fallback.css" />
         <script src="https://cdn.tailwindcss.com"></script>
 
         <!-- Scripts -->
@@ -51,7 +52,7 @@
                             <a href="{{ route('blog.index')}}" class="dark:text-white">Blog</a>
                         </li>
                         <li class="font-medium text-sm p-3 cursor-pointer hover:bg-slate-300 dark:hover:bg-slate-800 sm:p-0 sm:hover:bg-transparent text-gray-600 hover:text-primary transition-colors">
-                            <a href="#" class="dark:text-white">Contact</a>
+                            <a href="{{ route('contact') }}" class="dark:text-white">Contact</a>
                         </li>
                     </ul>
                 </div>

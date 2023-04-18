@@ -15,7 +15,7 @@ class ArticlesController extends Controller
      */
     public function index()
     {
-        $articles = Articles::with('categories','user')->latest()->get();
+        $articles = Articles::with('categories','user')->latest()->simplePaginate(10);
         return view('blog.index', compact('articles'));
     }
 
@@ -56,7 +56,7 @@ class ArticlesController extends Controller
      */
     public function edit(Articles $article)
     {
-        if (Gate::denies('update-articles', $article)) {
+        if (Gate::denies('articles.update', $article)) {
             abort(403);
         }
         
@@ -93,7 +93,7 @@ class ArticlesController extends Controller
      */
     public function destroy(Articles $article)
     {
-        if (Gate::denies('destroy-articles', $article)) {
+        if (Gate::denies('articles.destroy', $article)) {
             abort(403);
         }
 

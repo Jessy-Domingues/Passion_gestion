@@ -34,6 +34,9 @@
         @endforeach
 
     </div>
+    <div class="flex justify-center">
+    {{ $articles->links() }}
+    </div>
 </section>
 </slot>
 </x-app-layout>
