@@ -23,6 +23,7 @@
             <!-- Page Heading -->
             
             <header>
+                
             
             @include('layouts.navigation')
              @guest
@@ -59,6 +60,11 @@
                 
         </nav>
         @endguest
+        <section>
+            <div class="bg-hero">
+
+            </div>
+        </section>
     </header>
     
 
