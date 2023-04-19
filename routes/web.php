@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\ArticlesController;
@@ -18,8 +19,9 @@ use App\Http\Controllers\DashboardController;
 */
 
 Route::get('/', [WelcomeController::class, 'home'])->name('home');
-Route::get('/contact', [WelcomeController::class, 'contact'])->name('contact');
-Route::get('/bar', '\App\Http\Controllers\TestController@bar');
+Route::get('/contact', [ContactController::class, 'index'])->name('contact.index');
+Route::post('/contact', [ContactController::class, 'submit'])->name('contact.submit');
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');

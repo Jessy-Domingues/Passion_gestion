@@ -9,17 +9,16 @@ use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 
-class TestMail extends Mailable
+class ContactMail extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $data = [];
     /**
      * Create a new message instance.
      */
-    public function __construct(Array $user)
+    public function __construct()
     {
-        $this->data = $user;
+        //
     }
 
     /**
@@ -28,18 +27,18 @@ class TestMail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Test Mail',
+            subject: 'Contact Mail',
         );
     }
 
     /**
      * Get the message content definition.
      */
-    public function build()
+    public function content(): Content
     {
-        return $this->from('hello@example.com')
-                    ->subject('Mon objet perso')
-                    ->view('emails.test');
+        return new Content(
+            markdown: 'emails.contact',
+        );
     }
 
     /**

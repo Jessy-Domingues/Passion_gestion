@@ -30,12 +30,12 @@
                 </div>
                 <div class="w-full lg:w-1/2 xl:w-5/12 px-4">
                     <div class="bg-white relative rounded-lg p-8 sm:p-12 shadow-lg">
-                                @if(Session::has('success'))
-                            <div class="alert alert-success">
-                                {{Session::get('success')}}
-                            </div>
-                                @endif
-                        <form method="post" action="">
+                        @if(Session::has('success'))
+                        <div class="alert alert-success">
+                            {{Session::get('success')}}
+                        </div>
+                        @endif
+                        <form method="post" action="{{ route('contact.submit') }}">
                             @csrf
                             <div class="mb-6">
                                 <x-input-label>Votre nom</x-input-label>
@@ -49,7 +49,7 @@
                         outline-none
                         focus-visible:shadow-none
                         focus:border-primary
-                        " name="nom"/>
+                        " name="nom" />
                             </div>
                             <div class="mb-6">
                                 <x-input-label>Votre Email</x-input-label>
@@ -63,7 +63,7 @@
                         outline-none
                         focus-visible:shadow-none
                         focus:border-primary
-                        " name="email"/>
+                        " name="email" />
                             </div>
                             <div class="mb-6">
                                 <x-input-label>Votre Objet</x-input-label>
@@ -77,7 +77,7 @@
                         outline-none
                         focus-visible:shadow-none
                         focus:border-primary
-                        " name="objet"/>
+                        " name="objet" />
                             </div>
                             <div class="mb-6">
                                 <x-input-label>Votre Message</x-input-label>
