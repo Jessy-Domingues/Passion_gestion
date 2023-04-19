@@ -1,12 +1,14 @@
 <x-mail::message>
-# Introduction
+# De {{ $nom }}<br>
+Mail : {{ $email }}<br>
+Titre : {{ $objet }}<br>
 
-The body of your message.
+{{ $message }}
 
-<x-mail::button :url="''">
-Button Text
+<x-mail::button :url="'http://passion_gestion.test'">
+Visit us
 </x-mail::button>
 
-Thanks,<br>
+Merci,<br>
 {{ config('app.name') }}
 </x-mail::message>

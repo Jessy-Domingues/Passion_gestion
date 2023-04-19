@@ -31,7 +31,7 @@
                 <div class="w-full lg:w-1/2 xl:w-5/12 px-4">
                     <div class="bg-white relative rounded-lg p-8 sm:p-12 shadow-lg">
                         @if(Session::has('success'))
-                        <div class="alert alert-success">
+                        <div class="alert alert-success text-green-500">
                             {{Session::get('success')}}
                         </div>
                         @endif
