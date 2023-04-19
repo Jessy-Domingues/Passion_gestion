@@ -13,12 +13,13 @@ class TestMail extends Mailable
 {
     use Queueable, SerializesModels;
 
+    public $data = [];
     /**
      * Create a new message instance.
      */
-    public function __construct()
+    public function __construct(Array $user)
     {
-        //
+        $this->data = $user;
     }
 
     /**
@@ -34,11 +35,11 @@ class TestMail extends Mailable
     /**
      * Get the message content definition.
      */
-    public function content(): Content
+    public function build()
     {
-        return new Content(
-            view: 'view.name',
-        );
+        return $this->from('hello@example.com')
+                    ->subject('Mon objet perso')
+                    ->view('emails.test');
     }
 
     /**

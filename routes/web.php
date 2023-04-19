@@ -19,6 +19,7 @@ use App\Http\Controllers\DashboardController;
 
 Route::get('/', [WelcomeController::class, 'home'])->name('home');
 Route::get('/contact', [WelcomeController::class, 'contact'])->name('contact');
+Route::get('/bar', '\App\Http\Controllers\TestController@bar');
 
 Route::middleware('auth')->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
