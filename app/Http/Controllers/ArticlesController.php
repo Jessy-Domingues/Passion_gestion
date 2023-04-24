@@ -96,10 +96,15 @@ class ArticlesController extends Controller
         if (Gate::denies('articles.destroy', $article)) {
             abort(403);
         }
-
         $article->delete();
 
-        return redirect()->route('dashboard')->with('success', 'Votre article a été supprimé');
+        return redirect()->route('dashboard')->with('detruit', 'Votre article a été supprimé');
 
+    }
+
+    public function filtre(){
+
+        $articles = Articles::with('categories')->latest()->simplePaginate(5);
+        return view('blog.categorie', compact('articles'));
     }
 }

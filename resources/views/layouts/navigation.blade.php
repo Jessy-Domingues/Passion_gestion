@@ -1,5 +1,5 @@
 @auth
-<nav class="bg-white border-gray-200 px-4 lg:px-6 py-2.5 flex flex-wrap justify-between items-center w-full">
+<nav class="bg-transparent border-gray-200 px-4 lg:px-6 py-2.5 flex flex-wrap justify-between items-center w-full">
     <!-- Primary Navigation Menu -->
     <div class="w-9/12 mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
@@ -20,7 +20,7 @@
 
                 <!-- Volet création d'articles -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('articles.create')" :active="request()->routeIs('articles.create')" >
+                    <x-nav-link :href="route('articles.create')" :active="request()->routeIs('articles.create')" class="active:underline-orange-500">
                         {{ __('Créer un article') }}
                     </x-nav-link>
                 </div>

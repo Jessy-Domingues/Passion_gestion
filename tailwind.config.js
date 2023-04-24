@@ -14,9 +14,6 @@ module.exports = {
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
             },
-            backgroundImage: {
-                'hero': "url('../../../public/assets/CITIES_SKYLINES_II.jpg')",
-            },
         },
     },
 

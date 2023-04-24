@@ -6,10 +6,10 @@
                 <div class="w-full lg:w-1/2 xl:w-6/12 px-4">
                     <div class="max-w-[570px] mb-12 lg:mb-0">
                         <span class="block mb-4 text-base text-orange-500 font-semibold">
-                            Contact Us
+                            Contactez nous
                         </span>
                         <h2 class="
-                  text-dark
+                  text-neutral-700
                   mb-6
                   uppercase
                   font-bold
@@ -98,12 +98,12 @@
                             <div>
                                 <button type="submit" class="
                         w-full
-                        text-neutral-600 font-semibold
+                        text-neutral-800 font-semibold
                         bg-transparent
                         rounded
                         border border-orange-500
                         p-3
-                        transition
+                        transition duration-300
                         hover:bg-orange-500/90
                         ">
                                     Envoyer le message
