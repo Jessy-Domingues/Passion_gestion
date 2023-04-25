@@ -18,6 +18,7 @@ class CategoriesFactory extends Factory
     {
         return [
             'nom' => $this->faker->sentence(rand(1, 3), true)
+            
         ];
     }
 }

@@ -102,9 +102,12 @@ class ArticlesController extends Controller
 
     }
 
-    public function filtre(){
+    public function filtre(Articles $article){
 
-        $articles = Articles::with('categories')->latest()->simplePaginate(5);
-        return view('blog.categorie', compact('articles'));
-    }
+        
+        $articles = Articles::where('categories_id', $_GET['categories_id'])->get();
+        
+
+return view('blog.categorie', compact('articles'));
+}
 }
